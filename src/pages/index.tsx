@@ -34,6 +34,7 @@ const IndexPage: React.FC<{ children }> = ({ children }) => {
       minH={"100vh"}
       bgGradient={"linear(#A9E4EF 30%, #A934EF 80%)"}
     >
+      
       <Tabs align={"end"} variant={"enclosed"}>
         <TabList>
           <Tab>About Me</Tab>

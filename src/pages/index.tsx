@@ -23,8 +23,11 @@ import {
   SiNodedotjs,
   SiGit,
   SiGatsby,
+  SiReact,
 } from "react-icons/si";
 import { motion } from "framer-motion";
+import Lokal from "../images/lokal.png";
+import Mentions from "../images/mentions.png";
 const MotionStack = motion<StackProps>(VStack);
 
 const IndexPage: React.FC<{ children }> = ({ children }) => {
@@ -34,8 +37,12 @@ const IndexPage: React.FC<{ children }> = ({ children }) => {
       minH={"100vh"}
       bgGradient={"linear(#A9E4EF 30%, #A934EF 80%)"}
     >
-      
-      <Tabs align={"end"} variant={"enclosed"}>
+      <Tabs
+        align={"end"}
+        variant={"soft-rounded"}
+        borderColor={"black"}
+        colorScheme={"gray"}
+      >
         <TabList>
           <Tab>About Me</Tab>
           <Tab>Skills</Tab>
@@ -48,6 +55,7 @@ const IndexPage: React.FC<{ children }> = ({ children }) => {
               animate={"visible"}
               exit={"exit"}
               justifyContent={"center"}
+              pt={20}
             >
               <Center>
                 <Heading fontSize={"8em"}>Jabali Ndungu</Heading>
@@ -67,18 +75,25 @@ const IndexPage: React.FC<{ children }> = ({ children }) => {
                 </Text>
               </Box>
               <HStack>
-                <Icon
-                  aria-label={"linkedin-account"}
-                  as={AiOutlineLinkedin}
-                  w={30}
-                  h={30}
-                />
-                <Icon
-                  aria-label={"github-account"}
-                  as={AiOutlineGithub}
-                  w={30}
-                  h={30}
-                />
+                <a
+                  href={"https://www.linkedin.com/in/jabali-ndungu/"}
+                  target={"_blank"}
+                >
+                  <Icon
+                    aria-label={"linkedin-account"}
+                    as={AiOutlineLinkedin}
+                    w={30}
+                    h={30}
+                  />
+                </a>
+                <a href={"https://www.github.com/weaponxii"} target={"_blank"}>
+                  <Icon
+                    aria-label={"github-account"}
+                    as={AiOutlineGithub}
+                    w={30}
+                    h={30}
+                  />
+                </a>
               </HStack>
             </MotionStack>
           </TabPanel>
@@ -87,38 +102,76 @@ const IndexPage: React.FC<{ children }> = ({ children }) => {
               <Center>
                 <Heading>Skills</Heading>
               </Center>
-              <HStack w={"80%"} spacing={30} justifyContent={"space-around"}>
-                <Icon
-                  aria-label={"node-logo"}
-                  as={SiNodedotjs}
-                  w={"5em"}
-                  h={"5em"}
-                />
-                <Icon
-                  aria-label={"gatsby-logo"}
-                  as={SiGatsby}
-                  w={"5em"}
-                  h={"5em"}
-                />
-                <Icon
-                  aria-label={"typescript-logo"}
-                  as={SiTypescript}
-                  w={"5em"}
-                  h={"5em"}
-                />
-                <Icon
-                  aria-label={"javascript-logo"}
-                  as={SiJavascript}
-                  w={"5em"}
-                  h={"5em"}
-                />
-                <Icon
-                  aria-label={"cplusplus-logo"}
-                  as={SiCplusplus}
-                  w={"5em"}
-                  h={"5em"}
-                />
-                <Icon aria-label={"git-logo"} as={SiGit} w={"5em"} h={"5em"} />
+              <HStack
+                w={"80%"}
+                spacing={30}
+                justifyContent={"space-around"}
+                p={20}
+              >
+                <Box alignContent={"center"}>
+                  <Icon
+                    aria-label={"node-logo"}
+                    as={SiNodedotjs}
+                    w={"5em"}
+                    h={"5em"}
+                  />
+                  <Text textAlign={"center"}>Node.js</Text>
+                </Box>
+                <Box alignContent={"center"}>
+                  <Icon
+                    aria-label={"node-logo"}
+                    as={SiReact}
+                    w={"5em"}
+                    h={"5em"}
+                  />
+                  <Text textAlign={"center"}>React</Text>
+                </Box>
+                <Box alignContent={"center"}>
+                  <Icon
+                    aria-label={"gatsby-logo"}
+                    as={SiGatsby}
+                    w={"5em"}
+                    h={"5em"}
+                  />
+                  <Text textAlign={"center"}>Gatsby</Text>
+                </Box>
+                <Box alignContent={"center"}>
+                  {" "}
+                  <Icon
+                    aria-label={"typescript-logo"}
+                    as={SiTypescript}
+                    w={"5em"}
+                    h={"5em"}
+                  />
+                  <Text textAlign={"center"}>TypeScript</Text>
+                </Box>
+                <Box alignContent={"center"}>
+                  <Icon
+                    aria-label={"javascript-logo"}
+                    as={SiJavascript}
+                    w={"5em"}
+                    h={"5em"}
+                  />
+                  <Text textAlign={"center"}>JavaScript</Text>
+                </Box>
+                <Box alignContent={"center"}>
+                  <Icon
+                    aria-label={"cplusplus-logo"}
+                    as={SiCplusplus}
+                    w={"5em"}
+                    h={"5em"}
+                  />
+                  <Text textAlign={"center"}>C++</Text>
+                </Box>
+                <Box alignContent={"center"}>
+                  <Icon
+                    aria-label={"git-logo"}
+                    as={SiGit}
+                    w={"5em"}
+                    h={"5em"}
+                  />
+                  <Text textAlign={"center"}>Git</Text>
+                </Box>
               </HStack>
             </MotionStack>
           </TabPanel>
@@ -127,34 +180,47 @@ const IndexPage: React.FC<{ children }> = ({ children }) => {
               <Center>
                 <Heading>Projects</Heading>
               </Center>
-              <HStack justifyContent={"space-between"} wrap={"wrap"}>
-                <Box
-                  borderColor={"black"}
-                  maxW={"md"}
-                  borderWidth={1}
-                  borderRadius={"md"}
-                  p={5}
-                >
-                  <Img src={""} />
-                  <Heading textAlign={"center"}>
-                    Commissions by Lokal Creatives
-                  </Heading>
-                  <Text>
-                    A web app for artists to run subscriptions and sell art
-                    commissions.
-                  </Text>
-                </Box>
-                <Box
-                  borderColor={"black"}
-                  maxW={"md"}
-                  borderWidth={1}
-                  borderRadius={"md"}
-                  p={5}
-                >
-                  <Img src={""} />
-                  <Heading>Mentions</Heading>
-                  <Text>Simple advanced search for Reddit.</Text>
-                </Box>
+              <HStack
+                justifyContent={"center"}
+                wrap={"wrap"}
+                p={5}
+                alignContent={"center"}
+              >
+                <a href={"htts://art.lokalcr.com"} target={"_blank"}>
+                  <Box
+                    borderColor={"black"}
+                    maxW={"md"}
+                    borderWidth={1}
+                    borderRadius={"md"}
+                    p={5}
+                  >
+                    <Img src={Lokal} />
+                    <Heading size={"md"} textAlign={"center"}>
+                      Commissions by Lokal Creatives
+                    </Heading>
+                    <Text textAlign={"center"}>
+                      A web app for artists to sell subscriptions and art
+                      commissions.
+                    </Text>
+                  </Box>
+                </a>
+                <a href={"https://mentionsapp.com"} target={"_blank"}>
+                  <Box
+                    borderColor={"black"}
+                    maxW={"md"}
+                    borderWidth={1}
+                    borderRadius={"md"}
+                    p={5}
+                  >
+                    <Img src={Mentions} />
+                    <Heading textAlign={"center"} size={"md"}>
+                      Mentions
+                    </Heading>
+                    <Text textAlign={"center"}>
+                      Simple advanced search for Reddit.
+                    </Text>
+                  </Box>
+                </a>
               </HStack>
             </VStack>
           </TabPanel>

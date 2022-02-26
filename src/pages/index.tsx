@@ -14,8 +14,13 @@ import {
   TabPanel,
   TabPanels,
   Img,
+  Button,
 } from "@chakra-ui/react";
-import { AiOutlineGithub, AiOutlineLinkedin } from "react-icons/ai";
+import {
+  AiOutlineGithub,
+  AiOutlineLinkedin,
+  AiOutlineMail,
+} from "react-icons/ai";
 import {
   SiJavascript,
   SiCplusplus,
@@ -28,6 +33,7 @@ import {
 import { motion } from "framer-motion";
 import Lokal from "../images/lokal.png";
 import Mentions from "../images/mentions.png";
+import { IconBase } from "react-icons/lib";
 const MotionStack = motion<StackProps>(VStack);
 
 const IndexPage: React.FC<{ children }> = ({ children }) => {
@@ -35,7 +41,7 @@ const IndexPage: React.FC<{ children }> = ({ children }) => {
     <Box
       padding={10}
       minH={"100vh"}
-      bgGradient={"linear(#A9E4EF 30%, #A934EF 80%)"}
+      bgGradient={"linear(#feada6, #f5efef)"}
     >
       <Tabs
         align={"end"}
@@ -67,14 +73,16 @@ const IndexPage: React.FC<{ children }> = ({ children }) => {
               </Center>
               <Box mx={"auto"} w={"50%"} textAlign={"left"}>
                 <Text>
-                  I'm a full-stack developer in Vancouver, BC, Canada with 4
-                  years of programming experience. I primarily focus on
-                  programming in React on the frontend (with both JavaScript and
-                  TypeScript) while I use Node.js on the backend for most
-                  projects.
+                  I'm a full-stack developer (who also writes) in Vancouver,
+                  Canada with 4 years of programming experience. I primarily
+                  focus on programming in React on the frontend (with both
+                  JavaScript and TypeScript) while I use Node.js on the backend
+                  for most projects. I write documentation, articles about APIs, and I
+                  copy-edit technical books too! Contact me using the buttons
+                  below if you'd like to chat.
                 </Text>
               </Box>
-              <HStack>
+              <HStack pt={50}>
                 <a
                   href={"https://www.linkedin.com/in/jabali-ndungu/"}
                   target={"_blank"}
@@ -93,6 +101,9 @@ const IndexPage: React.FC<{ children }> = ({ children }) => {
                     w={30}
                     h={30}
                   />
+                </a>
+                <a href={"mailto:jabali.ndu@gmail.com?subject=Mail from Portfolio"}>
+                  <Icon aria-label={"email"} as={AiOutlineMail} w={30} h={30} />
                 </a>
               </HStack>
             </MotionStack>
